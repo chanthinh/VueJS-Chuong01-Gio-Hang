@@ -1,1 +1,3 @@
 1. khi có v-bind: thì sẽ hiểu thành 1 cái biến, biến đó sẽ liên kết với phần dữ liệu mà mình lưu vào trong data
+
+2. Event Handling: sử dụng v-on dùng để lắng nghe 1 cái sự kiện, sau khi lắng nghe xong sẽ chạy 1 đoạn code function nào đó

@@ -1,0 +1,1 @@
+1. khi có v-bind: thì sẽ hiểu thành 1 cái biến, biến đó sẽ liên kết với phần dữ liệu mà mình lưu vào trong data

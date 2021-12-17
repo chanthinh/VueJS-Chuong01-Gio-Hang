@@ -15,6 +15,7 @@
         position: relative;
         background-color: aqua;
     }
+
     .box-2 {
         width: 50px;
         height: 50px;
@@ -27,7 +28,7 @@
 
 <body>
     <div id="app">
-        
+
         <h1>Count: {{ counter }}</h1>
         <button v-on:click='handleClick($event, 6)'>Click</button>
         <div class="box" v-on:mousemove='handleMouseMove'>
@@ -37,7 +38,7 @@
         </div>
         <form action="./server.php" v-on:submit.prevent='handleSubmitForm'>
             <label for='Nhập FullName'>Nhập FullName: </label>
-            <input name= 'fullnam' type="text"> <br>
+            <input name='fullnam' type="text"> <br>
             <label for='Nhập Email'>Nhập Email: </label>
             <input name='email' type="email"> <br>
             <input type="submit">
@@ -58,7 +59,7 @@
                 console.log('click', evt.target);
                 this.counter += number
             },
-            handleMouseMove(evt){
+            handleMouseMove(evt) {
                 console.log(evt);
                 this.clientX = evt.clientX
                 this.clientY = evt.clientY

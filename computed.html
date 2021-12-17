@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{ message }}</p>
+        <p>{{reversedMessage}}</p>
+        <button v-on:click='a++'>NumA + 1</button>
+        <button v-on:click='b++'>NumB + 1</button>
+        <p>Number + A: {{addA}}</p>
+        <p>Number + B: {{addB}}</p>
+    </div>
+
+</body>
+
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World',
+            a: 0,
+            b: 0,
+            number: 20
+        },
+        methods: {
+            // addA() {
+            //     console.log('run addA');
+            //     return this.a + this.number
+            // },
+            // addB() {
+            //     console.log('run addB');
+            //     return this.b + this.number
+            // }
+        },
+        computed: {
+            reversedMessage() {
+                return this.message.split('').reverse().join('')
+            },
+            addA() {
+                console.log('run addA');
+                return this.a + this.number
+            },
+            addB() {
+                console.log('run addB');
+                return this.b + this.number
+            }
+        }
+    })
+</script>
+
+</html>

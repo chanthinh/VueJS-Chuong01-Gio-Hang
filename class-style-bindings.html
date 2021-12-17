@@ -7,14 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Way Bindings and Class and Style</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .demo {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+
+        .demo.active {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+
+        .demo.error {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        .demo.error.active {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <h1>firstName = {{firstName}}</h1>
-        <input v-model='firstName' type="text" placeholder="Nhập firstName"> <br>
+        <input v-model='firstName' type="text" placeholder="Nhập firstName">
+        <br>
         <textarea v-model='about' cols="30" rows="10"></textarea>
         <p>About Me: {{about}}</p>
+        <br>
+        <button v-on:click='handleChangeActive'>Change Active</button>
+        <button v-on:click='handleChangeError'>Change Error</button>
+        <br>
+        <div class="demo" v-bind:class='objClass'>
+
+        </div>
     </div>
 </body>
 <script>
@@ -22,13 +54,25 @@
         el: '#app',
         data: {
             firstName: '',
-            about: ''
+            about: '',
+            isActive: true,
+            isError: false
         },
         methods: {
-
+            handleChangeActive() {
+                return this.isActive = !this.isActive
+            },
+            handleChangeError() {
+                return this.isError = !this.isError
+            }
         },
         computed: {
-
+            objClass() {
+                return {
+                    active: this.isActive,
+                    error: this.isError
+                }
+            }
         }
     })
 </script>

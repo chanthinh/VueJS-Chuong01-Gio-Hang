@@ -28,6 +28,10 @@
 
 <body>
     <div id="app">
+        <ul class="user">
+            <li v-for="user in userActive">{{user.email}}</li>
+        </ul>
+
         <ul>
             <li v-for="(value, key) in scores" v-bind:key="key">{{key}} : {{value}}</li>
         </ul>
@@ -49,6 +53,14 @@
                 math: 9.0,
                 physical: 7.0
             },
+            arrUser: [
+                {email: 'test1@gmail.com', isActive: false},
+                {email: 'test2@gmail.com', isActive: true},
+                {email: 'test3@gmail.com', isActive: false},
+                {email: 'test4@gmail.com', isActive: true},
+                {email: 'test5@gmail.com', isActive: false},
+                {email: 'test6@gmail.com', isActive: true},
+            ],
             listBlogs: [
                 {
                     "userId": 1,
@@ -74,7 +86,12 @@
 
         },
         computed: {
-
+            userActive() {
+                var user = this.arrUser.filter(function(u) {
+                    return u.isActive
+                })
+                return user
+            }
         }
     })
 </script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .tabs {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabs li {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+
+        .login, .register {
+            padding: 15px;
+            border: 5px solid blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul class='tabs'>
+            <li v-on:click="changeTabs('login')">Đăng Nhập</li>
+            <li v-on:click="changeTabs('register')">Đăng Ký</li>
+        </ul>
+
+        <div class="login" v-if='tabSelected === "login"'>
+            <h2>Form Đăng Nhập</h2>
+            <form action="">
+                <input type="text" placeholder="Nhập user">
+                <input type="text" placeholder="Nhập password">
+            </form>
+        </div>
+
+        <div class="register" v-else-if='tabSelected === "register"'>
+            <h2>Form Đăng Ký</h2>
+            <form action="">
+                <input type="text" placeholder="Nhập user">
+                <input type="text" placeholder="Nhập password">
+                <input type="text" placeholder="Nhập lại password">
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            tabSelected: 'login'
+        },
+        methods: {
+            changeTabs(tab){
+                this.tabSelected = tab;
+            }
+        },
+        computed: {
+
+        }
+    })
+</script>
+
+</html>

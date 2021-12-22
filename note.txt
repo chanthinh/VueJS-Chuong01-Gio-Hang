@@ -11,3 +11,6 @@
 
 6. Two Way Bindings: Ràng buộc dữ liệu 2 chiều
                     Bạn có thể sử dụng directive v-model để tạo ràng buộc dữ liệu 2 chiều lên các phần tử form input và textarea. Vue sẽ tự động chọn cách phù hợp để cập nhật phần tử này dựa trên kiểu của input
+
+7. v-if và v-show: v-if thì remove luôn cấu trúc DOM. Còn v-else chỉ ẩn đi về mặt giao diện
+8. Muốn thông báo cho VueJS biết là 2 phần tử khác nhau hoàn toàn thì cho thêm thuộc tính key khác nhau là đc

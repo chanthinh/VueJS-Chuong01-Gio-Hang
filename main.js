@@ -6,8 +6,13 @@ var vueInstance = new Vue({
         target: '_blank',
         price: 20000,
         sale: 0.3,
-        selectedProduct: 0,
+        selectedProduct: 2,
         listProductDetail: [
+            {
+                image: './images/red.jpg',
+                quantity: 0,
+                textColor: 'Màu Đỏ'
+            },
             {
                 image: './images/blue.jpg',
                 quantity: 8,
@@ -17,11 +22,6 @@ var vueInstance = new Vue({
                 image: './images/black.jpg',
                 quantity: 2,
                 textColor: 'Màu Đen'
-            },
-            {
-                image: './images/red.jpg',
-                quantity: 0,
-                textColor: 'Màu Đỏ'
             }
         ]
     },
@@ -36,6 +36,10 @@ var vueInstance = new Vue({
         formatFinalPrice() {
             var number = this.price - this.price * this.sale
             return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(number)
+        },
+        getProduct() {
+            let index = this.selectedProduct
+            return this.listProductDetail[index]
         }
     }
 })

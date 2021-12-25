@@ -37,20 +37,18 @@
                     <p class="quantity">Sản phẩm đã hết hàng</p>
 
                     <div class="wrapper-price">
-                        <div class="final-price">{{formatPrice()}}</div>
-                        <div class="origin-price">20.000đ</div>
-                        <div class="sale-price">-50%</div>
+                        <div class="final-price">{{formatFinalPrice}}</div>
+                        <div class="origin-price">{{formatOriginalPrice}}</div>
+                        <div class="sale-price">-{{sale * 100}}%</div>
                     </div>
                     <div class="wrapper-color">
                         <div class="text">Màu sắc</div>
                         <div class="list-color">
                             <p class="color-text"></p>
                             <ul>
-                                <li>
-                                    <img>
-                                </li>
-                                <!-- <li><img src="./images/blue.jpg" alt="color"></li> -->
-                                <!-- <li><img src="./images/red.jpg" alt="color"></li> -->
+                                <li><img src="./images/black.jpg" alt="color"></li>
+                                <li><img src="./images/blue.jpg" alt="color"></li>
+                                <li><img src="./images/red.jpg" alt="color"></li>
                             </ul>
                         </div>
                     </div>
@@ -60,11 +58,11 @@
             </div>
             <div class="description">
                 <ul class="extra-info">
-                    <li></li>
-                    <!-- <li>Thoát mồ hôi tốt</li>
+                    <li>Chất liệu: polyester và thun</li>
+                    <li>Thoát mồ hôi tốt</li>
                     <li>Áo thun cổ tròn thể thao Hiye chuyên được may từ chất liệu nilon thoáng mát</li>
                     <li>Kết hợp thêm sợi thun tạo độ co giãn giúp người tiêu dùng thoải mái khi mặc</li>
-                    <li>Chất liệu: polyester và thun</li> -->
+                    <li>Chất liệu: polyester và thun</li>
                 </ul>
                 <h2>Chất liệu bền chặt&nbsp;</h2>
                 <!-- v-html -->

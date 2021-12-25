@@ -26,7 +26,15 @@ var vueInstance = new Vue({
         ]
     },
     methods: {
-
+        handleClickColor(e, index) {
+            // console.log(e, index)
+            this.selectedProduct = index
+        },
+        classActive(index) {
+            return {
+                active: this.selectedProduct === index
+            }
+        }
     },
     computed: {
         formatOriginalPrice() {
@@ -40,6 +48,6 @@ var vueInstance = new Vue({
         getProduct() {
             let index = this.selectedProduct
             return this.listProductDetail[index]
-        }
+        },
     }
 })

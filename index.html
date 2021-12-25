@@ -46,7 +46,9 @@
                         <div class="list-color">
                             <p class="color-text">{{getProduct.textColor}}</p>
                             <ul>
-                                <li v-for="(item, index) in listProductDetail">
+                                <li v-for="(item, index) in listProductDetail" v-bind:key="index"
+                                    v-bind:class="classActive(index)"
+                                    v-on:click="handleClickColor($event, index)">
                                     <img v-bind:src="item.image" v-bind:alt="item.textColor">
                                 </li>
                                 <!-- <li><img src="./images/blue.jpg" alt="color"></li>
